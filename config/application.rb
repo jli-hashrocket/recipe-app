@@ -22,6 +22,7 @@ module RecipeApp
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
     config.assets.paths << Rails.root.join("vendor","assets","bower_components","bootstrap-sass-official","assets","fonts")
 
+
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff)$)
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
