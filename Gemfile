@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+gem 'railties'
 gem 'rake', '10.4.2'
 gem 'mysql2'
 # Use SCSS for stylesheets
