@@ -7,8 +7,13 @@ recipe = angular.module('recipe',[
   'angular-flash.flash-alert-directive'
 ])
 
-recipe.config([ '$routeProvider',
-  ($routeProvider)->
+recipe.config([ '$routeProvider', 'flashProvider'
+  ($routeProvider, flashProvider)->
+    flashProvider.errorClassnames.push("alert-danger")
+    flashProvider.warnClassnames.push("alert-warning")
+    flashProvider.infoClassnames.push("alert-info")
+    flashProvider.successClassnames.push("alert-success")
+
     $routeProvider
       .when('/',
         templateUrl: "index.html"
@@ -19,18 +24,4 @@ recipe.config([ '$routeProvider',
       )
 ])
 
-recipes = [
-  {
-    id: 1
-    name: 'Baked Potato w/Cheese'
-  },
-  {
-    id: 2
-    name: 'Garlic Mashed Potatoes',
-  },
-  {
-    id: 4
-    name: 'Baked Brussel Sprouts',
-  },
-]
 controllers = angular.module('controllers',[])
