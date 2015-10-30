@@ -41,8 +41,14 @@ GEM
       sprockets
       tilt
     arel (6.0.0)
+    autoprefixer-rails (6.0.3)
+      execjs
+      json
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.5)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     bower-rails (0.10.0)
     builder (3.2.2)
     byebug (5.0.0)
@@ -205,6 +211,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  bootstrap-sass (~> 3.3.5)
   bower-rails (~> 0.10.0)
   byebug
   capybara
@@ -223,8 +230,7 @@ DEPENDENCIES
   railties
   rake (= 10.4.2)
   rspec-rails (~> 2.0)
-  sass (= 3.2.19)
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
   selenium-webdriver
   spring
