@@ -24,7 +24,7 @@ recipe.config([ '$routeProvider', 'flashProvider'
       ).when('/recipes/:recipeId',
         templateUrl: "show.html"
         controller: 'RecipeController'
-      ).when('/recipes/:recipieId/edit',
+      ).when('/recipes/:recipeId/edit',
         templateUrl: "form.html",
         controller: 'RecipeController'
       )

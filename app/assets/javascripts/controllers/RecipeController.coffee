@@ -20,7 +20,9 @@ controllers.controller("RecipeController", [ '$scope', '$routeParams', '$resourc
 			$scope.recipe = {}
 
 		$scope.back = -> $location.path("/")
-		$scope.edit = -> $location.path("/recipes/#{$scope.recipe.id}/edit")
+
+		$scope.edit = -> 
+			$location.path("/recipes/#{$scope.recipe.id}/edit")
 		$scope.cancel = ->
 			if $scope.recipe.id
 				$location.path("/recipes/#{$scope.recipe.id}")
