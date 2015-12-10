@@ -26,8 +26,12 @@ recipe.config([ '$routeProvider', 'flashProvider'
         controller: 'RecipeController'
       ).when('/recipes/:recipeId/edit',
         templateUrl: "form.html",
-        controller: 'RecipeController'
+        controller: 'RecipeController',
+      ).when('/categories',
+        templateUrl: "categories/index.html"
+        controller: "CategoriesController"
       )
+
 ])
 
 controllers = angular.module('controllers',[])
