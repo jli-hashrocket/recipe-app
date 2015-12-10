@@ -14,4 +14,5 @@ controllers.controller("RecipesController", [ '$scope', '$routeParams', '$locati
 
     $scope.newRecipe = -> $location.path("/recipes/new")
     $scope.edit = (recipeId) -> $location.path("/recipes/#{recipeId}/edit")
+    $scope.categories = -> $location.path("/categories")
 ])
