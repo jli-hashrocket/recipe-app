@@ -1,0 +1,1 @@
+json.array! @all_categories, partial: 'category', as: :category

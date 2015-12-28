@@ -7,6 +7,8 @@ controllers.controller("RecipeController", [ '$scope', '$routeParams', '$resourc
 				'create': { method: 'POST'}
 			}
 		)
+		Category = $resource('/recipes/new', { categoryId: "@id", format: 'json' })
+		$scope.categories = Category.query()
 
 		if $routeParams.recipeId
 			Recipe.get({recipeId: $routeParams.recipeId},

@@ -9,6 +9,10 @@ class RecipesController < ApplicationController
   	end
   end
 
+  def new
+    @all_categories = Category.all
+  end
+
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.save
