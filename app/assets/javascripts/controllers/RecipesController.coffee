@@ -6,6 +6,7 @@ controllers.controller("RecipesController", [ '$scope', '$routeParams', '$locati
 
     if $routeParams.keywords
       keywords = $routeParams.keywords.toLowerCase()
+      console.log Recipe.query(keywords: $routeParams.keywords, (results)-> $scope.recipes = results)
       Recipe.query(keywords: $routeParams.keywords, (results)-> $scope.recipes = results)
     else
       $scope.recipes = []

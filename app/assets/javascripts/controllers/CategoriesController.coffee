@@ -6,8 +6,8 @@ controllers.controller("CategoriesController", [ '$scope', '$routeParams', '$loc
     Category = $resource('/categories/:categoryId', { categoryId: "@id", format: 'json' })
 
     if $routeParams.cat_keywords
-      keywords = $routeParams.cat_keywords.toLowerCase()
-      Category.query(keywords: $routeParams.cat_keywords, (results)-> $scope.categories = results)
+      cat_keywords = $routeParams.cat_keywords.toLowerCase()
+      Category.query(cat_keywords: $routeParams.cat_keywords, (results)-> $scope.categories = results)
     else
       $scope.categories = []
 
