@@ -27,7 +27,7 @@
 			<ul class="list-unstyled">
 			    <li ng-repeat="category in categories">
 			    	<label for="{{category.name}}">{{category.name}}</label>
-			    	<input type="checkbox" name="{{category.name}}" value="{{category.name}}"/>
+			    	<input type="checkbox" name="category_ids[]" ng-model='recipe.categories[category.id]' value="{{category.id}}"/>
 			    </li>
 		  	</ul>
 		</div>

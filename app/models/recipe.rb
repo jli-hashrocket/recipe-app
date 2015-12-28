@@ -1,3 +1,6 @@
 class Recipe < ActiveRecord::Base
-	has_and_belongs_to_many :categorires
+	validates_presence_of :name
+	validates_presence_of :instructions
+
+	has_and_belongs_to_many :categories
 end

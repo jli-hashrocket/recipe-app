@@ -15,7 +15,10 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.save
+    if @recipe.save
+      params[:categories].keys.each {|category_id| CategoriesRecipe.create(recipe_id: @recipe.id, category_id: category_id.to_i)} if params[:categories].present?
+    end
+    
     render 'show', status: 201
   end
 
