@@ -4,6 +4,10 @@ controllers.controller("CategoriesController", [ '$scope', '$routeParams', '$loc
     $scope.recipes = -> $location.path("/recipes")
     $scope.search = (cat_keywords)-> $location.path("/categories").search('cat_keywords', cat_keywords)
     Category = $resource('/categories/:categoryId', { categoryId: "@id", format: 'json' })
+    AllCategories = $resource('/categories', { categoryId: "@id", format: 'json' })
+    $scope.categories = Category.query()
+    $scope.all_categories = AllCategories.query()
+
 
     if $routeParams.cat_keywords
       cat_keywords = $routeParams.cat_keywords.toLowerCase()

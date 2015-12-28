@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
     else
       []
     end
+    @all_categories = Category.all
   end
 
   def create

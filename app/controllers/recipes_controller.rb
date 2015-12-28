@@ -33,6 +33,13 @@ class RecipesController < ApplicationController
   def update
     recipe = Recipe.find(params[:id])
     recipe.update_attributes(recipe_params)
+    if !recipe.categories.present?
+      params[:categories].keys.each {|category_id| CategoriesRecipe.create(recipe_id: recipe.id, category_id: category_id.to_i)} if params[:categories].present?
+    else
+      category_recipes = CategoriesRecipe.where(recipe_id: recipe.id)
+      binding.pry
+      # category_recipes.each { |category_recipe| params[:categories].keys.each {|category| category_recipe.update_attributes(category_id: category.to_id)} }
+    end
     head :no_content
   end
 

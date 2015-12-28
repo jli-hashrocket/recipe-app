@@ -16,6 +16,7 @@ controllers.controller("CategoryController", [ '$scope', '$routeParams', '$resou
           flash.error = "There is no category with ID #{$routeParams.categoryId}"
         )
       )
+
     else
       $scope.category = {}
 
