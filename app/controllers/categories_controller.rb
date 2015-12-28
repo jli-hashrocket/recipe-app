@@ -2,7 +2,6 @@ class CategoriesController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    binding.pry
     @recipes = if params[:keywords]
       Category.where('name like ?', "%#{params[:keywords]}%")
     else
@@ -17,6 +16,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    binding.pry
     @category = Category.find(params[:id])
   end
 

@@ -1,17 +1,18 @@
 controllers = angular.module('controllers')
 controllers.controller("CategoriesController", [ '$scope', '$routeParams', '$location', '$resource',
   ($scope, $routeParams, $location, $resource) ->
-    # $scope.search = (keywords)-> $location.path("/").search('keywords', keywords)
-    # Recipe = $resource('/recipes/:recipeId', { recipeId: "@id", format: 'json' })
+    $scope.recipes = -> $location.path("/recipes")
+    $scope.search = (cat_keywords)-> $location.path("/categories").search('cat_keywords', cat_keywords)
+    Category = $resource('/categories/:categoryId', { categoryId: "@id", format: 'json' })
 
-    # if $routeParams.keywords
-    #   keywords = $routeParams.keywords.toLowerCase()
-    #   Recipe.query(keywords: $routeParams.keywords, (results)-> $scope.recipes = results)
-    # else
-    #   $scope.recipes = []
+    if $routeParams.cat_keywords
+      keywords = $routeParams.cat_keywords.toLowerCase()
+      Category.query(keywords: $routeParams.cat_keywords, (results)-> $scope.categories = results)
+    else
+      $scope.categories = []
 
-    # $scope.view = (recipeId) -> $location.path("/recipes/#{recipeId}")
+    $scope.view = (categoryId) -> $location.path("/categories/#{categoryId}")
 
-    # $scope.newRecipe = -> $location.path("/recipes/new")
-    # $scope.edit = (recipeId) -> $location.path("/recipes/#{recipeId}/edit")
+    $scope.newCategory = -> $location.path("/categories/new")
+    $scope.edit = (categoryId) -> $location.path("/categories/#{categoryId}/edit")
 ])
